@@ -3,7 +3,6 @@
 
 // Bootstrap can be removed entirely by deleting this line.
 
-@import "bootstrap/bootstrap";
 
 // The easiest way to customise Bootstrap variables while
 // being able to easily override the source files with new
@@ -20,3 +19,24 @@
 
 // Add your own site style includes here
 @import "site/layout";
+@import "site/general";
+@import "site/logo";
+@import "site/navigation";
+@import "site/header";
+@import "site/about";
+@import "site/portfolio";
+@import "site/services";
+@import "site/why-us";
+@import "site/numbers";
+@import "site/pricing";
+@import "site/testimonial";
+@import "site/team";
+@import "site/blog";
+@import "site/blog-post";
+@import "site/blog-sidebar";
+@import "site/contact";
+@import "site/footer";
+@import "site/responsive";
+@import "site/owl-theme";
+@import "site/back-to-top";
+@import "site/preloader";
