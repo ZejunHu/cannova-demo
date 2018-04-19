@@ -7,7 +7,16 @@
     padding: 40px 20px 40px 70px;
     margin: 15px 0px;
     border: 1px solid $gray-300;
-    height: 230px;
+    height: auto;
+    ul {
+      list-style-type: disc;
+    }
+    @media (min-width: 768px) {
+      height: 300px;
+    }
+    @media (min-width: 1200px) {
+      height: 260px;
+    }
 }
 
 /* @media only screen and (min-width: 992px) {
@@ -55,4 +64,8 @@
 
 .service:hover h3 {
     color: #fff;
+}
+
+.service {
+  font-size: 12px;
 }
