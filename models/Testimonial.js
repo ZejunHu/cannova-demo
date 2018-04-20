@@ -16,7 +16,7 @@ Testimonial.add({
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 	publishedDate: { type: Types.Datetime, index: true, dependsOn: { state: 'published' } },
 	image: { type: Types.CloudinaryImage },
-  categories: { type: String, required: true },
+  category: { type: String },
 	content: {
 		extended: { type: Types.Html, wysiwyg: true, height: 400 },
 	},
@@ -26,5 +26,5 @@ Testimonial.schema.virtual('content.full').get(function () {
 	return this.content.extended || this.content.brief;
 });
 
-Testimonial.defaultColumns = 'title, state|20%, categories|20%, publishedDate|20%';
+Testimonial.defaultColumns = 'title, state, category, publishedDate';
 Testimonial.register();

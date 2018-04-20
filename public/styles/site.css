@@ -917,6 +917,8 @@ header {
 \*------------------------------------*/
 .testimonial {
   margin: 15px 0px; }
+  .testimonial p {
+    color: white; }
 
 .testimonial-meta {
   position: relative;

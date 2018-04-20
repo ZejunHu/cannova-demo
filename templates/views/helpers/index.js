@@ -326,5 +326,11 @@ module.exports = function () {
 		return obj._[underscoreMethod].format();
 	};
 
+	////////////////////////////////////////////////////////////////
+	_helpers.logsth = function(sth) {
+		console.log(sth);
+		return;
+	};
+
 	return _helpers;
 };

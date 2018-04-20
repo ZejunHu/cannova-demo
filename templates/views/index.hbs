@@ -591,28 +591,18 @@
 				<!-- Testimonial slider -->
 				<div class="col-md-10 col-md-offset-1">
 					<div id="testimonial-slider" class="owl-carousel owl-theme">
-
+						{{# each data.testimonials.results}}
 						<!-- testimonial -->
 						<div class="testimonial">
 							<div class="testimonial-meta">
-								<img src="/images/temp/perso1.jpg" alt="">
-								<h3 class="white-text">Hong Jun</h3>
-								<span>Executive Manager</span>
+								{{#if image}}<img src="{{{cloudinaryUrl image}}}" alt="{{{title}}}">{{/if}}
+								<h3 class="white-text">{{{title}}}</h3>
+								<span>{{{category}}}</span>
 							</div>
-							<p class="white-text">Molestie at elementum eu facilisis sed odio. Scelerisque in dictum non consectetur a erat. Aliquam id diam maecenas ultricies mi eget mauris.</p>
+							<p class="white-text">{{{content.extended}}}</p>
 						</div>
 						<!-- /testimonial -->
-
-						<!-- testimonial -->
-						<div class="testimonial">
-							<div class="testimonial-meta">
-								<img src="/images/temp/perso2.jpg" alt="">
-								<h3 class="white-text">Yi Fan</h3>
-								<span>Event Planner</span>
-							</div>
-							<p class="white-text">Molestie at elementum eu facilisis sed odio. Scelerisque in dictum non consectetur a erat. Aliquam id diam maecenas ultricies mi eget mauris.</p>
-						</div>
-						<!-- /testimonial -->
+						{{/each}}
 
 					</div>
 				</div>
