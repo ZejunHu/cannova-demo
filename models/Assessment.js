@@ -5,6 +5,8 @@ var nations = ["Afghanistan","Albania","Algeria","American Samoa","Andorra","Ang
 
 var provinces = ["No Preferred Destination", "Alberta", "British Colombia", "Manitoba", "New Brunswick", "Newfoundland and Labrador", "Northwest Territories (NWT)", "Nova Scotia", "Ontario", "Quebec", "Prince Edward Island (PEI)", "Saskatchewan", "Yukon"];
 
+var level = ["Advanced", "High Intermediate", "Intermediate", "Manitoba", "Low Intermediate", "Basic", "None"];
+
 /**
  * Assessment Model
  * =============
@@ -30,11 +32,49 @@ Assessment.add({
 	nationality: { type: Types.Select, options: nations },
 	currentResidence: { type: Types.Select, options: nations },
 	preferredDestination: { type: Types.Select, options: provinces },
-	assessmentType: { type: Types.Select, options: [
-		{ value: 'message', label: 'Just leaving a message' },
-		{ value: 'question', label: 'I\'ve got a question' },
-		{ value: 'other', label: 'Something else...' },
+	age: { type: Number, required: true },
+	martialStatus: { type: Types.Select, option: [
+		{ value: 'Never Married', label: 'Never Married' },
+		{ value: 'Married', label: 'Married' },
+		{ value: 'Common-Law Relationship', label: 'Common-Law Relationship' },
+		{ value: 'Divorced', label: 'Divorced' },
+		{ value: 'Widow', label: 'Widow' },
 	] },
+	childrenNumber: { type: Types.Select, option: [
+		{ value: '0', label: '0' },
+		{ value: '1', label: '1' },
+		{ value: '2', label: '2' },
+		{ value: '3', label: '3' },
+		{ value: '4', label: '4' },
+		{ value: '5', label: '5' },
+		{ value: '6', label: '6' },
+		{ value: '7', label: '7' },
+		{ value: '8', label: '8' },
+		{ value: '9', label: '9' },
+		{ value: '10', label: '10' },
+	] },
+	childrenDisability: { type: Boolean },
+	completedHighSchool: { type: Boolean },
+	afterHighSchool: { type: Boolean },
+	haveWork: { type: Boolean },
+	speakingEnglish: { type: Types.Select, options: level },
+	listeningEnglish: { type: Types.Select, options: level },
+	readingEnglish: { type: Types.Select, options: level },
+	writingEnglish: { type: Types.Select, options: level },
+	speakingFrench: { type: Types.Select, options: level },
+	listeningFrench: { type: Types.Select, options: level },
+	readingFrench: { type: Types.Select, options: level },
+	writingFrench: { type: Types.Select, options: level },
+	workInCanada: { type: Boolean },
+	offerInCanada: { type: Boolean },
+	visitedCanada: { type: Boolean },
+	familyInCanada: { type: Boolean },
+	currency: { type: Types.Select, options: ["CAD - Canadian Dollar", "EUR - Euro", "USD - United States Dollar"] },
+	networth: { type: Types.Select, options: ["Less than 10,000", "10,000 -- 100,000", "100,000 -- 500,000", "500,000 -- 1,000,000", "1,000,000 -- 1,600,000", "1,600,000+"] },
+	businessExp: { type: Boolean },
+	ownBusiness: { type: Boolean },
+	criminal: { type: Boolean },
+	disease: { type: Boolean },
 	message: { type: Types.Markdown, required: true },
 	createdAt: { type: Date, default: Date.now },
 });
@@ -87,5 +127,5 @@ Assessment.schema.methods.sendNotificationEmail = function (callback) {
 };
 
 Assessment.defaultSort = '-createdAt';
-Assessment.defaultColumns = 'name, email, assessmentType, createdAt';
+Assessment.defaultColumns = 'firstName, LastName, email, createdAt';
 Assessment.register();
