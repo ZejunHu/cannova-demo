@@ -31,11 +31,11 @@
 				<ul class="main-nav nav navbar-nav navbar-right">
 					<li><a href="#home">Home</a></li>
 					<li><a href="#about">About</a></li>
-					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#portfolio">Categories</a></li>
 					<li><a href="#service">Services</a></li>
 					<!-- <li><a href="#pricing">Prices</a></li> -->
 					<li><a href="#team">Team</a></li>
-					<li><a href="#blog">Blog</a> </li>
+					<li><a href="/blog">Blog</a> </li>
 					<!-- <ul class="dropdown"> -->
 					<!-- <li><a href="blog-single.html">blog post</a></li> -->
 					<!-- </ul> -->
@@ -720,64 +720,27 @@
 				<!-- /Section header -->
 
 				<!-- blog -->
-				<div class="col-md-4">
+				{{# each data.posts.results}}
+				<div class="col-md-4 col-sm-10 col-sm-offset-1 col-md-offset-0">
 					<div class="blog">
 						<div class="blog-img">
-							<img class="img-responsive" src="/images/temp/blog1.jpg" alt="">
+							{{#if image}}<img class="img-blog" src="{{{cloudinaryUrl image}}}" alt="{{{title}}}">{{/if}}
 						</div>
 						<div class="blog-content">
 							<ul class="blog-meta">
-								<li><i class="fa fa-user"></i>John doe</li>
-								<li><i class="fa fa-clock-o"></i>18 Oct</li>
-								<li><i class="fa fa-comments"></i>57</li>
+								{{#if author.name.first}}<li><i class="fa fa-user"></i>{{author.name.first}} {{author.name.last}}</li>{{/if}}
+								<li><i class="fa fa-clock-o"></i>{{date publishedDate}}</li>
+								{{#if categories}}<li><i class="fa fa-tags"></i>{{categories.0.name}}</li>{{/if}}
 							</ul>
-							<h3>Molestie at elementum eu facilisis sed odio</h3>
-							<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
-							<a href="blog-single.html">Read more</a>
+							<h3>{{{title}}}</h3>
+							<p>{{{content.brief}}}</p>
+							{{#if content.extended}}<a href="{{postUrl slug}}">Read more</a>{{/if}}
 						</div>
 					</div>
 				</div>
+				{{/each}}
 				<!-- /blog -->
 
-				<!-- blog -->
-				<div class="col-md-4">
-					<div class="blog">
-						<div class="blog-img">
-							<img class="img-responsive" src="/images/temp/blog2.jpg" alt="">
-						</div>
-						<div class="blog-content">
-							<ul class="blog-meta">
-								<li><i class="fa fa-user"></i>John doe</li>
-								<li><i class="fa fa-clock-o"></i>18 Oct</li>
-								<li><i class="fa fa-comments"></i>57</li>
-							</ul>
-							<h3>Molestie at elementum eu facilisis sed odio</h3>
-							<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
-							<a href="blog-single.html">Read more</a>
-						</div>
-					</div>
-				</div>
-				<!-- /blog -->
-
-				<!-- blog -->
-				<div class="col-md-4">
-					<div class="blog">
-						<div class="blog-img">
-							<img class="img-responsive" src="/images/temp/blog3.jpg" alt="">
-						</div>
-						<div class="blog-content">
-							<ul class="blog-meta">
-								<li><i class="fa fa-user"></i>John doe</li>
-								<li><i class="fa fa-clock-o"></i>18 Oct</li>
-								<li><i class="fa fa-comments"></i>57</li>
-							</ul>
-							<h3>Molestie at elementum eu facilisis sed odio</h3>
-							<p>Nec feugiat nisl pretium fusce id velit ut tortor pretium. Nisl purus in mollis nunc sed. Nunc non blandit massa enim nec.</p>
-							<a href="blog-single.html">Read more</a>
-						</div>
-					</div>
-				</div>
-				<!-- /blog -->
 
 			</div>
 			<!-- /Row -->
@@ -835,13 +798,28 @@
 
 				<!-- contact form -->
 				<div class="col-md-8 col-md-offset-2">
-					<form class="contact-form">
-						<input type="text" class="input" placeholder="Name">
-						<input type="email" class="input" placeholder="Email">
-						<input type="text" class="input" placeholder="Subject">
-						<textarea class="input" placeholder="Message"></textarea>
-						<button class="main-btn">Send message</button>
+					{{#if enquirySubmitted}}
+					<h3 class="text-center">Thanks for getting in touch.</h3>
+					{{else}}
+					<form class="contact-form" method="post">
+						<input type="hidden" name="action" value="contact">
+						<div class="form-group first-line {{#if validationErrors.name}}has-error{{/if}}">
+							<input type="text" name="name.full"  class="input" placeholder="Name" value="{{formData.[name.full]}}">
+						</div>
+						<div class="form-group first-line first-line-right {{#if validationErrors.email}}has-error{{/if}}">
+							<input type="email" name="email" class="input" placeholder="Email" value="{{formData.email}}">
+						</div>
+						<div class="form-group">
+							<input type="text" name="subject" placeholder="Subject" class="input" value="{{formData.subject}}">
+						</div>
+						<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
+							<textarea name="message" placeholder="Message" class="input">{{formData.message}}</textarea>
+						</div>
+						<div class="form-actions">
+							<button type="submit" class="main-btn">Send</button>
+						</div>
 					</form>
+					{{/if}}
 				</div>
 				<!-- /contact form -->
 
@@ -853,3 +831,17 @@
 
 	</div>
 	<!-- /Contact -->
+
+<script type="text/javascript" src="/js/jquery.min.js"></script>
+<script type="text/javascript">
+	var largest = 0; //start with 0
+
+	$(".blog").each(function(){ //loop through each section
+	   var findHeight = $(this).height(); //find the height
+	   if(findHeight > largest){ //see if this height is greater than "largest" height
+	      largest = findHeight; //if it is greater, set largest height to this one
+	   }
+	});
+
+	$(".blog").css({"height":largest+"px"});
+</script>

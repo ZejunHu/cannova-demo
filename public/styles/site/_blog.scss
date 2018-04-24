@@ -2,6 +2,8 @@
 	Blog
 \*------------------------------------*/
 
+
+
 .blog {
     background-color: #FFF;
     margin: 15px 0px;
@@ -25,4 +27,18 @@
 .blog .blog-meta li i {
     color: $primary;
     margin-right: 5px;
+}
+
+.img-blog {
+  width: 100%;
+  height: 18rem;
+  @media (min-width: 400px) {
+    height: 27rem;
+  }
+  @media (min-width: 576px) {
+    height: 32rem;
+  }
+  @media (min-width: 992px) {
+    height: 24rem;
+  }
 }

@@ -10,6 +10,7 @@ exports = module.exports = function (req, res) {
 	locals.section = 'blog';
 	locals.filters = {
 		category: req.params.category,
+		keywords: req.query.keywords,
 	};
 	locals.data = {
 		posts: [],
@@ -56,12 +57,14 @@ exports = module.exports = function (req, res) {
 
 	// Load the posts
 	view.on('init', function (next) {
+		console.log(locals.filters.keywords);
 
 		var q = keystone.list('Post').paginate({
 			page: req.query.page || 1,
 			perPage: 10,
-			maxPages: 10,
+			maxPages: 100,
 			filters: {
+				title: new RegExp(locals.filters.keywords, "i"),
 				state: 'published',
 			},
 		})

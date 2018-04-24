@@ -33,14 +33,14 @@ Assessment.add({
 	currentResidence: { type: Types.Select, options: nations },
 	preferredDestination: { type: Types.Select, options: provinces },
 	age: { type: Number, required: true },
-	martialStatus: { type: Types.Select, option: [
+	martialStatus: { type: Types.Select, options: [
 		{ value: 'Never Married', label: 'Never Married' },
 		{ value: 'Married', label: 'Married' },
 		{ value: 'Common-Law Relationship', label: 'Common-Law Relationship' },
 		{ value: 'Divorced', label: 'Divorced' },
 		{ value: 'Widow', label: 'Widow' },
 	] },
-	childrenNumber: { type: Types.Select, option: [
+	childrenNumber: { type: Types.Select, options: [
 		{ value: '0', label: '0' },
 		{ value: '1', label: '1' },
 		{ value: '2', label: '2' },
@@ -113,7 +113,8 @@ Assessment.schema.methods.sendNotificationEmail = function (callback) {
 			templateName: 'assessment-notification',
 			transport: 'mailgun',
 		}).send({
-			to: "success@can-nova.com",
+			//to: "success@can-nova.com",
+			to: "wbsxbysharp@gmail.com",
 			from: {
 				name: 'CanNova',
 				email: 'noreply@cannova.com',
