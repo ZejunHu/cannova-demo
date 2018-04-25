@@ -9,7 +9,8 @@ exports = module.exports = function (req, res) {
 	// Set locals
 	locals.section = 'assessment';
   locals.nationality = Assessment.fields.nationality.ops;
-	locals.assessmentTypes = Assessment.fields.assessmentType.ops;
+	locals.salutation = Assessment.fields.salutation.ops;
+	locals.province = Assessment.fields.preferredDestination.ops;
 	locals.formData = req.body || {};
 	locals.validationErrors = {};
 	locals.assessmentSubmitted = false;
