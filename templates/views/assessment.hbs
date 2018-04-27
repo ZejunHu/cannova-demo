@@ -1,54 +1,379 @@
-<div class="container">
-	<h1>Online Assessment</h1>
-</div>
-<div class="container">
-	<div class="row">
-		<div class="col-sm-8 col-md-6">
-			{{#if assessmentSubmitted}}
-			<h3>Thank you very much!</h3>
-			{{else}}
-			<form method="post">
-				<input type="hidden" name="action" value="assessment">
-				<div class="form-group">
-					<label>Name</label>
-					<input type="text" name="name.full"  class="form-control" value="{{formData.[name.full]}}">
+<!-- Header -->
+<header>
+
+	<!-- Nav -->
+	<nav id="nav" class="navbar">
+		<div class="container">
+
+			<div class="navbar-header">
+				<!-- Logo -->
+				<div class="navbar-brand">
+					<a href="/">
+						<img class="logo" src="/images/logo-alt.png" alt="logo">
+					</a>
 				</div>
-				<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
-					<label>Email</label>
-					<input type="email" name="email" class="form-control" value="{{formData.email}}">
+				<!-- /Logo -->
+
+				<!-- Collapse nav button -->
+				<div class="nav-collapse">
+					<span></span>
 				</div>
-				<div class="form-group">
-					<label>Phone</label>
-					<input type="text" name="phone" placeholder="(optional)" class="form-control" value="{{formData.phone}}">
-				</div>
-        <div class="form-group">
-					<label>Nationality</label>
-					<select name="nationality" class="form-control">
-            <!-- {{logsth nationality}} -->
-						<option value="">Please select</option>
-						{{#each nationality}}
-						<option value="{{value}}">{{label}}</option>
-						{{/each}}
-					</select>
-				</div>
-				<div class="form-group {{#if validationErrors.assessmentType}}has-error{{/if}}">
-					<label>What are you contacting us about?</label>
-					<select name="enquiryType" class="form-control">
-						<option value="">(select one)</option>
-						{{#each enquiryTypes}}
-						<option value="{{value}}">{{label}}</option>
-						{{/each}}
-					</select>
-				</div>
-				<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
-					<label>Message</label>
-					<textarea name="message" placeholder="Leave us a message..." rows="4" class="form-control">{{formData.message}}</textarea>
-				</div>
-				<div class="form-actions">
-					<button type="submit" class="btn btn-primary">Send</button>
-				</div>
-			</form>
-			{{/if}}
+				<!-- /Collapse nav button -->
+			</div>
+
+			<!--  Main navigation  -->
+			<ul class="main-nav nav navbar-nav navbar-right">
+				<li><a href="/#home">Home</a></li>
+				<li><a href="/#about">About</a></li>
+				<li><a href="/#portfolio">Portfolio</a></li>
+				<li><a href="/#service">Services</a></li>
+				<li><a href="/#team">Team</a></li>
+				<li><a href="/blog">News</a>
+					<!-- <ul class="dropdown">
+						<li><a href="#">blog post</a></li>
+					</ul> -->
+				</li>
+				<li><a href="/#contact">Contact</a></li>
+			</ul>
+			<!-- /Main navigation -->
+
+		</div>
+	</nav>
+	<!-- /Nav -->
+
+	<!-- header wrapper -->
+	<div class="header-wrapper sm-padding bg-grey">
+		<div class="container">
+			<h2>Online Assessment</h2>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">Home</a></li>
+				<li class="breadcrumb-item"><a href="/assessment">Online Assessment</a></li>
+			</ul>
 		</div>
 	</div>
-</div>
+	<!-- /header wrapper -->
+
+	<!-- contact form -->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8 col-md-6">
+				{{#if assessmentSubmitted}}
+				<h3>Thank you, we Will reply as soon as possible!</h3>
+				{{else}}
+				<form method="post">
+					<input type="hidden" name="action" value="assessment">
+					<div class="form-block">
+						<h3>Contact Information</h3>
+						<div class="form-group">
+							<label>Salutation</label>
+							<select name="salutation" class="form-control">
+								<option value="">Please Choose</option>
+								{{#each salutation}}
+								<option value="{{value}}">{{label}}</option>
+								{{/each}}
+							</select>
+						</div>
+						<div class="form-group">
+							<label>First Name</label>
+							<input type="text" name="firstName"  class="form-control" value="{{formData.firstName}}">
+						</div>
+						<div class="form-group">
+							<label>Last Name</label>
+							<input type="text" name="lastName"  class="form-control" value="{{formData.lastName}}">
+						</div>
+						<div class="form-group {{#if validationErrors.email}}has-error{{/if}}">
+							<label>Email</label>
+							<input type="email" name="email" class="form-control" value="{{formData.email}}">
+						</div>
+						<div class="form-group">
+							<label>Phone</label>
+							<input type="text" name="phone" placeholder="" class="form-control" value="{{formData.phone}}">
+						</div>
+					</div>
+
+					<div class="form-block">
+						<h3>Profile</h3>
+						<div class="form-group">
+							<label>Nationality</label>
+							<select name="nationality" class="form-control">
+								<option value="">Please Choose</option>
+								{{#each nationality}}
+								<option value="{{value}}">{{label}}</option>
+								{{/each}}
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Country of Current Residence</label>
+							<select name="currentResidence" class="form-control">
+								<option value="">Please Choose</option>
+								{{#each nationality}}
+								<option value="{{value}}">{{label}}</option>
+								{{/each}}
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Preferred Destination in Canada</label>
+							<select name="preferredDestination" class="form-control">
+								<option value="">Please Choose</option>
+								{{#each province}}
+								<option value="{{value}}">{{label}}</option>
+								{{/each}}
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Age</label>
+							<input type="text" name="age" placeholder="" class="form-control" value="{{formData.age}}">
+						</div>
+						<div class="form-group">
+							<label>Martial Status</label>
+							<select name="martialStatus" class="form-control">
+								<option value="">Please Choose</option>
+								{{#each martial}}
+								<option value="{{value}}">{{label}}</option>
+								{{/each}}
+							</select>
+						</div>
+						<div class="form-group">
+							<label>How many children do you have?</label>
+							<select name="childrenNumber" class="form-control">
+								<option value="">Please Choose</option>
+								{{#each childrenNumber}}
+								<option value="{{value}}">{{label}}</option>
+								{{/each}}
+							</select>
+						</div>
+						<div class="form-group">
+							<label>Do you have children over 18 years of age with a physical or mental disability?</label>
+							<br>
+							<label><input type="radio" name="childrenDisability" class="" value=true>Yes</label>
+							<label><input type="radio" name="childrenDisability" class="" value=false>No</label>
+						</div>
+					</div>
+
+					<div class="form-block">
+						<h3>Education</h3>
+						<div class="form-group">
+							<label>Have you completed high school (Also known as secondary school)?</label>
+							<br>
+							<label><input type="radio" name="completedHighSchool" class="" value=true>Yes</label>
+							<label><input type="radio" name="completedHighSchool" class="" value=false>No</label>
+						</div>
+						<div class="form-group">
+							<label>Have you received any education/training after high school?</label>
+							<br>
+							<label><input type="radio" name="afterHighSchool" class="" value=true>Yes</label>
+							<label><input type="radio" name="afterHighSchool" class="" value=false>No</label>
+						</div>
+					</div>
+
+					<div class="form-block">
+						<h3>Work Experience</h3>
+						<div class="form-group">
+							<label>Have you had paid employment during the last 10 years?</label>
+							<br>
+							<label><input type="radio" name="haveWork" class="" value=true>Yes</label>
+							<label><input type="radio" name="haveWork" class="" value=false>No</label>
+						</div>
+					</div>
+
+					<div class="form-block">
+						<h3>Language Skills</h3>
+						<div class="form-block-element">
+							<h4>English</h4>
+							<div class="form-group">
+								<label>Speaking</label>
+								<select name="speakingEnglish" class="form-control">
+									<option value="">Please Choose</option>
+									{{#each level}}
+									<option value="{{value}}">{{label}}</option>
+									{{/each}}
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Listening</label>
+								<select name="listeningEnglish" class="form-control">
+									<option value="">Please Choose</option>
+									{{#each level}}
+									<option value="{{value}}">{{label}}</option>
+									{{/each}}
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Reading</label>
+								<select name="readingEnglish" class="form-control">
+									<option value="">Please Choose</option>
+									{{#each level}}
+									<option value="{{value}}">{{label}}</option>
+									{{/each}}
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Writing</label>
+								<select name="writingEnglish" class="form-control">
+									<option value="">Please Choose</option>
+									{{#each level}}
+									<option value="{{value}}">{{label}}</option>
+									{{/each}}
+								</select>
+							</div>
+						</div>
+						<div class="form-block-element">
+							<h4>French</h4>
+							<div class="form-group">
+								<label>Speaking</label>
+								<select name="speakingFrench" class="form-control">
+									<option value="">Please Choose</option>
+									{{#each level}}
+									<option value="{{value}}">{{label}}</option>
+									{{/each}}
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Listening</label>
+								<select name="listeningFrench" class="form-control">
+									<option value="">Please Choose</option>
+									{{#each level}}
+									<option value="{{value}}">{{label}}</option>
+									{{/each}}
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Reading</label>
+								<select name="readingFrench" class="form-control">
+									<option value="">Please Choose</option>
+									{{#each level}}
+									<option value="{{value}}">{{label}}</option>
+									{{/each}}
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Writing</label>
+								<select name="writingFrench" class="form-control">
+									<option value="">Please Choose</option>
+									{{#each level}}
+									<option value="{{value}}">{{label}}</option>
+									{{/each}}
+								</select>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-block">
+						<h3>Canadian Connections</h3>
+						<div class="form-block-element">
+							<h4>Work Experience in Canada</h4>
+							<div class="form-group">
+								<label>Have you been employed in Canada as a temporary foreign worker?</label>
+								<br>
+								<label><input type="radio" name="workInCanada" class="" value=true>Yes</label>
+								<label><input type="radio" name="workInCanada" class="" value=false>No</label>
+							</div>
+						</div>
+
+						<div class="form-block-element">
+							<h4>Job Offer in Canada</h4>
+							<div class="form-group">
+								<label>Do you have an official/written offer of employment from a Canadian employer?</label>
+								<br>
+								<label><input type="radio" name="offerInCanada" class="" value=true>Yes</label>
+								<label><input type="radio" name="offerInCanada" class="" value=false>No</label>
+							</div>
+						</div>
+
+						<div class="form-block-element">
+							<h4>Stay in Canada</h4>
+							<div class="form-group">
+								<label>Have you visited Canada before?</label>
+								<br>
+								<label><input type="radio" name="visitedCanada" class="" value=true>Yes</label>
+								<label><input type="radio" name="visitedCanada" class="" value=false>No</label>
+							</div>
+						</div>
+
+						<div class="form-block-element">
+							<h4>Family and Friends in Canada</h4>
+							<div class="form-group">
+								<label>Do you have family or close friends living in Canada?</label>
+								<br>
+								<label><input type="radio" name="familyInCanada" class="" value=true>Yes</label>
+								<label><input type="radio" name="familyInCanada" class="" value=false>No</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-block">
+						<h3>Personal Net Worth</h3>
+						<div class="form-block-element">
+							<label>Personal net worth means the total value of your assets (bank accounts, stocks, bonds, real estate, etc) MINUS the total of your liabilities (mortgages, loans, credit card balances, etc).
+								<br>
+								* Please Include assets and debts/liabilities of spouse/common-law partner (if applicable)
+								<br>
+								* Also Include value of share ownership in companies you own (if applicable)
+							</label>
+							<div class="form-group">
+								<select name="currency" class="form-control">
+									<option value="">Currency</option>
+									{{#each currency}}
+									<option value="{{value}}">{{label}}</option>
+									{{/each}}
+								</select>
+							</div>
+							<div class="form-group">
+								<select name="networth" class="form-control">
+									<option value="">What is your networth?</option>
+									{{#each networth}}
+									<option value="{{value}}">{{label}}</option>
+									{{/each}}
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Do you have experience managing a business?</label>
+							<br>
+							<label><input type="radio" name="businessExp" class="" value=true>Yes</label>
+							<label><input type="radio" name="businessExp" class="" value=false>No</label>
+						</div>
+						<div class="form-group">
+							<label>Have you ever owned and operated your own business?</label>
+							<br>
+							<label><input type="radio" name="ownBusiness" class="" value=true>Yes</label>
+							<label><input type="radio" name="ownBusiness" class="" value=false>No</label>
+						</div>
+					</div>
+
+					<div class="form-block">
+						<h3>Security and Medical</h3>
+						<div class="form-group">
+							<label>Have you ever been convicted of a criminal offense?</label>
+							<br>
+							<label><input type="radio" name="criminal" class="" value=true>Yes</label>
+							<label><input type="radio" name="criminal" class="" value=false>No</label>
+						</div>
+						<div class="form-group">
+							<label>Do you or any of your immediate family members have a medical condition?</label>
+							<br>
+							<label><input type="radio" name="disease" class="" value=true>Yes</label>
+							<label><input type="radio" name="disease" class="" value=false>No</label>
+						</div>
+					</div>
+
+					<div class="form-block">
+						<h3>Questions & Comments</h3>
+						<div class="form-group">
+							<label>Please let us know any additional comments you have.</label>
+							<textarea name="message" placeholder="Message" rows="4" class="form-control">{{formData.message}}</textarea>
+						</div>
+					</div>
+
+					<div class="form-actions">
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</div>
+				</form>
+				{{/if}}
+			</div>
+		</div>
+	</div>
+	<!-- /contact form -->
+
+</header>
+<!-- /Header -->

@@ -11,6 +11,11 @@ exports = module.exports = function (req, res) {
   locals.nationality = Assessment.fields.nationality.ops;
 	locals.salutation = Assessment.fields.salutation.ops;
 	locals.province = Assessment.fields.preferredDestination.ops;
+	locals.martial = Assessment.fields.martialStatus.ops;
+	locals.childrenNumber = Assessment.fields.childrenNumber.ops;
+	locals.level = Assessment.fields.speakingEnglish.ops;
+	locals.currency = Assessment.fields.currency.ops;
+	locals.networth = Assessment.fields.networth.ops;
 	locals.formData = req.body || {};
 	locals.validationErrors = {};
 	locals.assessmentSubmitted = false;
@@ -23,7 +28,7 @@ exports = module.exports = function (req, res) {
 
 		updater.process(req.body, {
 			flashErrors: true,
-			fields: 'name, email, phone, nationality, assessmentType',
+			fields: 'salutation, firstName, lastName, email, phone, nationality, currentResidence, preferredDestination, age, martialStatus, childrenNumber, childrenDisability, completedHighSchool, afterHighSchool, haveWork, speakingEnglish, listeningEnglish, readingEnglish, writingEnglish, speakingFrench, listeningFrench, readingFrench, writingFrench, workInCanada, offerInCanada, visitedCanada, familyInCanada, currency, networth, businessExp, ownBusiness, criminal, disease, message',
 			errorMessage: 'There was a problem submitting your assessment:',
 		}, function (err) {
 			if (err) {
