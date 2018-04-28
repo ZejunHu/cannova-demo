@@ -1,0 +1,98 @@
+<h1>Hi Can-Nova!</h1>
+<p class="text-larger">An Online Assessment was just submitted to {{brand}}:</p>
+
+<div class="">
+  <h3>Contact Information</h3>
+		<p>Salutation: <strong>{{assessment.salutation}}</strong></p>
+		<p>First Name: <strong>{{assessment.firstName}}</strong></p>
+		<p>Last Name: <strong>{{assessment.lastName}}</strong></p>
+		<p>Email: <strong>{{assessment.email}}</strong></p>
+    <p>Phone: <strong>{{assessment.phone}}</strong></p>
+</div>
+
+<div class="">
+  <h3>Profile</h3>
+  <p>Nationality: <strong>{{underscoreFormat assessment 'nationality'}}</strong></p>
+  <p>Country of Current Residence: <strong>{{underscoreFormat assessment 'currentResidence'}}</strong></p>
+  <p>Preferred Destination in Canada: <strong>{{underscoreFormat assessment 'preferredDestination'}}</strong></p>
+  <p>Age: <strong>{{assessment.age}}</strong></p>
+  <p>Martial Status: <strong>{{underscoreFormat assessment 'martialStatus'}}</strong></p>
+  <p>How many children do you have? <strong>{{underscoreFormat assessment 'childrenNumber'}}</strong></p>
+  <p>Do you have children over 18 years of age with a physical or mental disability? <strong>{{#if assessment.childrenDisability}}Yes{{else}}No{{/if}}</strong></p>
+</div>
+
+<div class="">
+  <h3>Education</h3>
+  <p>Have you completed high school (Also known as secondary school)? <strong>{{#if assessment.completedHighSchool}}Yes{{else}}No{{/if}}</strong></p>
+  <p>Have you received any education/training after high school? <strong>{{#if assessment.afterHighSchool}}Yes{{else}}No{{/if}}</strong></p>
+</div>
+
+<div class="">
+  <h3>Work Experience</h3>
+  <p>Have you had paid employment during the last 10 years? <strong>{{#if assessment.haveWork}}Yes{{else}}No{{/if}}</strong></p>
+</div>
+
+<div class="">
+  <h3>Language Skills</h3>
+  <div class="">
+    <h4>English</h4>
+    <p>Speaking: <strong>{{underscoreFormat assessment 'speakingEnglish'}}</strong></p>
+    <p>Listening: <strong>{{underscoreFormat assessment 'listeningEnglish'}}</strong></p>
+    <p>Reading: <strong>{{underscoreFormat assessment 'readingEnglish'}}</strong></p>
+    <p>Writing: <strong>{{underscoreFormat assessment 'writingEnglish'}}</strong></p>
+  </div>
+
+  <div class="">
+    <h4>French</h4>
+    <p>Speaking: <strong>{{underscoreFormat assessment 'speakingFrench'}}</strong></p>
+    <p>Listening: <strong>{{underscoreFormat assessment 'listeningFrench'}}</strong></p>
+    <p>Reading: <strong>{{underscoreFormat assessment 'readingFrench'}}</strong></p>
+    <p>Writing: <strong>{{underscoreFormat assessment 'writingFrench'}}</strong></p>
+  </div>
+</div>
+
+<div class="">
+  <h3>Canadian Connections</h3>
+  <div class="">
+    <h4>Work Experience in Canada</h4>
+    <p>Have you been employed in Canada as a temporary foreign worker? <strong>{{#if assessment.workInCanada}}Yes{{else}}No{{/if}}</strong></p>
+  </div>
+
+  <div class="">
+    <h4>Job Offer in Canada</h4>
+    <p>Do you have an official/written offer of employment from a Canadian employer? <strong>{{#if assessment.offerInCanada}}Yes{{else}}No{{/if}}</strong></p>
+  </div>
+
+  <div class="">
+    <h4>Stay in Canada</h4>
+    <p>Have you visited Canada before? <strong>{{#if assessment.visitedCanada}}Yes{{else}}No{{/if}}</strong></p>
+  </div>
+
+  <div class="">
+    <h4>Family and Friends in Canada</h4>
+    <p>Do you have family or close friends living in Canada? <strong>{{#if assessment.familyInCanada}}Yes{{else}}No{{/if}}</strong></p>
+  </div>
+</div>
+
+<div class="">
+  <h3>Personal Net Worth</h3>
+  <p>Currency: <strong>{{underscoreFormat assessment 'currency'}}</strong></p>
+  <p>What is your networth? <strong>{{underscoreFormat assessment 'networth'}}</strong></p>
+  <p>Do you have experience managing a business? <strong>{{#if assessment.businessExp}}Yes{{else}}No{{/if}}</strong></p>
+  <p>Have you ever owned and operated your own business? <strong>{{#if assessment.ownBusiness}}Yes{{else}}No{{/if}}</strong></p>
+</div>
+
+<div class="">
+  <h3>Security and Medical</h3>
+  <p>Have you ever been convicted of a criminal offense? <strong>{{#if assessment.criminal}}Yes{{else}}No{{/if}}</strong></p>
+  <p>Do you or any of your immediate family members have a medical condition? <strong>{{#if assessment.disease}}Yes{{else}}No{{/if}}</strong></p>
+</div>
+
+<div class="">
+  <h3>Questions & Comments</h3>
+  <p>Message:</p>
+  {{#if assessment.message}}
+    {{{assessment.message.html}}}
+  {{/if}}
+</div>
+<p class="text-muted">Sent {{underscoreFormat assessment 'createdAt'}}</p>

@@ -5,7 +5,7 @@ var nations = ["Afghanistan","Albania","Algeria","American Samoa","Andorra","Ang
 
 var provinces = ["No Preferred Destination", "Alberta", "British Colombia", "Manitoba", "New Brunswick", "Newfoundland and Labrador", "Northwest Territories (NWT)", "Nova Scotia", "Ontario", "Quebec", "Prince Edward Island (PEI)", "Saskatchewan", "Yukon"];
 
-var level = ["Advanced", "High Intermediate", "Intermediate", "Manitoba", "Low Intermediate", "Basic", "None"];
+var level = ["Advanced", "High Intermediate", "Intermediate", "Low Intermediate", "Basic", "None"];
 
 /**
  * Assessment Model
@@ -70,7 +70,7 @@ Assessment.add({
 	visitedCanada: { type: Boolean },
 	familyInCanada: { type: Boolean },
 	currency: { type: Types.Select, options: ["CAD - Canadian Dollar", "EUR - Euro", "USD - United States Dollar"] },
-	networth: { type: Types.Select, options: ["Less than 10,000", "10,000 -- 100,000", "100,000 -- 500,000", "500,000 -- 1,000,000", "1,000,000 -- 1,600,000", "1,600,000+"] },
+	networth: { type: Types.Select, options: ["Less than 10,000", "10,000 to 100,000", "100,000 to 500,000", "500,000 to 1,000,000", "1,000,000 to 1,600,000", "1,600,000+"] },
 	businessExp: { type: Boolean },
 	ownBusiness: { type: Boolean },
 	criminal: { type: Boolean },
