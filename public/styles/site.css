@@ -185,9 +185,6 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 .main-btn:hover, .white-btn:hover, .outline-btn:hover {
   opacity: 0.8; }
 
-label {
-  margin: 0 2px; }
-
 /*------------------------------------*\
 	Logo
 \*------------------------------------*/
@@ -1587,6 +1584,19 @@ header {
 .mt-2 {
   margin-top: 2rem; }
 
+.mt-5 {
+  margin-top: 5rem; }
+
 .mx-auto {
   margin-left: auto !important;
   margin-right: auto !important; }
+
+label {
+  margin: 0 2px; }
+
+.form-block {
+  margin: 2rem 0; }
+  .form-block h3 {
+    color: #425386; }
+  .form-block h4 {
+    font-size: 1.5rem; }
