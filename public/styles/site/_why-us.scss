@@ -27,3 +27,34 @@
     margin-top: 10rem;
   }
 }
+
+.feature-CN {
+    margin: 15px 0px;
+}
+
+.feature-CN i {
+  float: left;
+  padding: 5px;
+  border-radius: 50%;
+  color: $primary;
+  border: 1px solid $primary;
+  margin-bottom: 30px;
+  margin-right: 5px;
+  @media (min-width: 465px) {
+    margin-bottom: 5px;
+  }
+}
+
+.feature-CN-image {
+  margin-top: 4rem;
+  @media (min-width: 992px) {
+    margin-top: 12rem;
+  }
+  @media (min-width: 1200px) {
+    margin-top: 9rem;
+  }
+}
+
+.feature-link {
+  text-decoration: underline;
+}

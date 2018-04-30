@@ -701,6 +701,7 @@ header {
 	Services
 \*------------------------------------*/
 .service {
+  font-size: 12px;
   position: relative;
   padding: 40px 20px 40px 70px;
   margin: 15px 0px;
@@ -756,8 +757,8 @@ header {
 .service:hover h3 {
   color: #fff; }
 
-.service {
-  font-size: 12px; }
+.service-CN {
+  font-size: 15px; }
 
 /*------------------------------------*\
 	Why choose us
@@ -785,6 +786,33 @@ header {
   @media (min-width: 1200px) {
     .feature-image {
       margin-top: 10rem; } }
+
+.feature-CN {
+  margin: 15px 0px; }
+
+.feature-CN i {
+  float: left;
+  padding: 5px;
+  border-radius: 50%;
+  color: #425386;
+  border: 1px solid #425386;
+  margin-bottom: 30px;
+  margin-right: 5px; }
+  @media (min-width: 465px) {
+    .feature-CN i {
+      margin-bottom: 5px; } }
+
+.feature-CN-image {
+  margin-top: 4rem; }
+  @media (min-width: 992px) {
+    .feature-CN-image {
+      margin-top: 12rem; } }
+  @media (min-width: 1200px) {
+    .feature-CN-image {
+      margin-top: 9rem; } }
+
+.feature-link {
+  text-decoration: underline; }
 
 /*------------------------------------*\
 	Numbers
@@ -1420,6 +1448,10 @@ header {
     margin: auto; }
   .blog-comments .media .media {
     margin: 0px -15px; } }
+
+@font-face {
+  font-family: "Yahei";
+  src: url("/fonts/Microsoft Yahei.ttf"); }
 
 /*------------------------------------*\
 	Owl theme
