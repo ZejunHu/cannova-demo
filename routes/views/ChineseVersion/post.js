@@ -19,7 +19,7 @@ exports = module.exports = function (req, res) {
 	// Load all categories
 	view.on('init', function (next) {
 
-		keystone.list('PostCategory').model.find().sort('name').exec(function (err, results) {
+		keystone.list('PostCategoryChinese').model.find().sort('name').exec(function (err, results) {
 
 			if (err || !results.length) {
 				return next(err);
@@ -30,7 +30,7 @@ exports = module.exports = function (req, res) {
 			// Load the counts for each category
 			async.each(locals.data.categories, function (category, next) {
 
-				keystone.list('Post').model.count().where('categories').in([category.id]).exec(function (err, count) {
+				keystone.list('PostChinese').model.count().where('categories').in([category.id]).exec(function (err, count) {
 					category.postCount = count;
 					next(err);
 				});
@@ -44,7 +44,7 @@ exports = module.exports = function (req, res) {
 	// Load the current post
 	view.on('init', function (next) {
 
-		var q = keystone.list('Post').model.findOne({
+		var q = keystone.list('PostChinese').model.findOne({
 			state: 'published',
 			slug: locals.filters.post,
 		}).populate('author categories');
@@ -59,7 +59,7 @@ exports = module.exports = function (req, res) {
 	// Load other posts
 	view.on('init', function (next) {
 
-		var q = keystone.list('Post').model.find().where('state', 'published').sort('-publishedDate').populate('author categories').limit('4');
+		var q = keystone.list('PostChinese').model.find().where('state', 'published').sort('-publishedDate').populate('author categories').limit('4');
 
 		q.exec(function (err, results) {
 			locals.data.posts = results;
@@ -69,5 +69,5 @@ exports = module.exports = function (req, res) {
 	});
 
 	// Render the view
-	view.render('post');
+	view.render('Chinese-Version/post');
 };

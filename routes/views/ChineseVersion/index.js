@@ -43,7 +43,7 @@ exports = module.exports = function (req, res) {
 	////////////////////// Testimonial ///////////////////////////
 	view.on('init', function (next) {
 
-		var q = keystone.list('Testimonial').paginate({
+		var q = keystone.list('TestimonialChinese').paginate({
 			page: req.query.page || 1,
 			perPage: 20,
 			maxPages: 1,
@@ -53,10 +53,6 @@ exports = module.exports = function (req, res) {
 		})
 			.sort('-publishedDate')
 			.populate('author categories');
-
-		if (locals.data.category) {
-			q.where('categories').in([locals.data.category]);
-		}
 
 		q.exec(function (err, results) {
 			locals.data.testimonials = results;
@@ -69,7 +65,7 @@ exports = module.exports = function (req, res) {
 	// Load the posts
 	view.on('init', function (next) {
 
-		var q = keystone.list('Post').paginate({
+		var q = keystone.list('PostChinese').paginate({
 			page: req.query.page || 1,
 			perPage: 3,
 			maxPages: 1,

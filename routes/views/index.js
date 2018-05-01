@@ -54,10 +54,6 @@ exports = module.exports = function (req, res) {
 			.sort('-publishedDate')
 			.populate('author categories');
 
-		if (locals.data.category) {
-			q.where('categories').in([locals.data.category]);
-		}
-
 		q.exec(function (err, results) {
 			locals.data.testimonials = results;
 			next(err);

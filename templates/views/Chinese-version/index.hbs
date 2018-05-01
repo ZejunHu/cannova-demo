@@ -1,5 +1,5 @@
 <style>
-p, h1, h2, h3, h4, h5, h6 {
+p, h1, h2, h3, h4, h5, h6, a {
 	font-family: Yahei;
 }
 </style>
@@ -750,7 +750,7 @@ p, h1, h2, h3, h4, h5, h6 {
 							</ul>
 							<h3>{{{title}}}</h3>
 							<p>{{{content.brief}}}</p>
-							{{#if content.extended}}<a href="{{postUrl slug}}">Read more</a>{{/if}}
+							{{#if content.extended}}<a href="{{postUrlChinese slug}}">查看详情</a>{{/if}}
 						</div>
 					</div>
 				</div>
@@ -786,7 +786,7 @@ p, h1, h2, h3, h4, h5, h6 {
 				<div class="col-sm-4">
 					<div class="contact">
 						<i class="fa fa-phone"></i>
-						<h3>Phone</h3>
+						<h3>电话</h3>
 						<p>647-878-5813</p>
 					</div>
 				</div>
@@ -796,7 +796,7 @@ p, h1, h2, h3, h4, h5, h6 {
 				<div class="col-sm-4">
 					<div class="contact">
 						<i class="fa fa-envelope"></i>
-						<h3>Email</h3>
+						<h3>邮箱</h3>
 						<p>success@can-nova.com</p>
 					</div>
 				</div>
@@ -806,7 +806,7 @@ p, h1, h2, h3, h4, h5, h6 {
 				<div class="col-sm-4">
 					<div class="contact">
 						<i class="fa fa-map-marker"></i>
-						<h3>Address</h3>
+						<h3>地址</h3>
 						<p>#142, 700 Third Line, Oakville, Ontario, L6L 4B1</p>
 					</div>
 				</div>
@@ -815,24 +815,24 @@ p, h1, h2, h3, h4, h5, h6 {
 				<!-- contact form -->
 				<div class="col-md-8 col-md-offset-2">
 					{{#if enquirySubmitted}}
-					<h3 class="text-center">Thanks for getting in touch.</h3>
+					<h3 class="text-center">谢谢您的支持，我们会尽快回复！</h3>
 					{{else}}
 					<form class="contact-form" method="post">
 						<input type="hidden" name="action" value="contact">
 						<div class="form-group first-line {{#if validationErrors.name}}has-error{{/if}}">
-							<input type="text" name="name.full"  class="input" placeholder="Name" value="{{formData.[name.full]}}">
+							<input type="text" name="name.full"  class="input" placeholder="姓名" value="{{formData.[name.full]}}">
 						</div>
 						<div class="form-group first-line first-line-right {{#if validationErrors.email}}has-error{{/if}}">
-							<input type="email" name="email" class="input" placeholder="Email" value="{{formData.email}}">
+							<input type="email" name="email" class="input" placeholder="电子邮件" value="{{formData.email}}">
 						</div>
 						<div class="form-group">
-							<input type="text" name="subject" placeholder="Subject" class="input" value="{{formData.subject}}">
+							<input type="text" name="subject" placeholder="主题" class="input" value="{{formData.subject}}">
 						</div>
 						<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
-							<textarea name="message" placeholder="Message" class="input">{{formData.message}}</textarea>
+							<textarea name="message" placeholder="留言" class="input">{{formData.message}}</textarea>
 						</div>
 						<div class="form-actions">
-							<button type="submit" class="main-btn">Send</button>
+							<button type="submit" class="main-btn">提交</button>
 						</div>
 					</form>
 					{{/if}}

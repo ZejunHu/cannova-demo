@@ -65,6 +65,7 @@ keystone.set('routes', require('./routes'));
 // Configure the navigation bar in Keystone's Admin UI
 keystone.set('nav', {
 	posts: ['posts', 'post-categories', 'testimonials'],
+	postsChinese: ['post-chineses', 'post-category-chineses', 'testimonial-chineses'],
 	enquiries: ['enquiries', 'assessments'],
 	users: 'users',
 });
@@ -81,6 +82,8 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	+ '\n\nCreate a mailgun account and add the credentials to the .env file to'
 	+ '\nset up your mailgun integration');
 }
+
+keystone.set("signin logo", "../images/logo-alt.png");
 
 
 keystone.start();

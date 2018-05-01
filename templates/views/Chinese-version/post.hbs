@@ -1,3 +1,8 @@
+<style>
+p, h1, h2, h3, h4, h5, h6, a {
+	font-family: Yahei;
+}
+</style>
 <!-- Header -->
 	<header>
 
@@ -23,13 +28,18 @@
 
 				<!--  Main navigation  -->
 				<ul class="main-nav nav navbar-nav navbar-right">
-					<li><a href="/#home">Home</a></li>
-					<li><a href="/#about">About</a></li>
-					<li><a href="/#portfolio">Events</a></li>
-					<li><a href="/#service">Services</a></li>
-					<li><a href="/#team">Team</a></li>
-					<li><a href="/blog">News</a></li>
-					<li><a href="/assessment">Assessment</a></li>
+					<li><a href="/zh-CN/#home">首页</a></li>
+					<li><a href="/zh-CN/#about">公司简介</a></li>
+					<li><a href="/zh-CN/#portfolio">移民类别</a></li>
+					<li><a href="/zh-CN/#service">服务项目</a></li>
+					<li><a href="/zh-CN/#team">加星团队</a></li>
+					<li><a href="/zh-CN/blog">最新资讯</a>
+						<!-- <ul class="dropdown">
+							<li><a href="#">blog post</a></li>
+						</ul> -->
+					</li>
+					<li><a href="/assessment">在线评估</a></li>
+					<li><a href="/">English</a></li>
 				</ul>
 				<!-- /Main navigation -->
 
@@ -42,8 +52,8 @@
 			<div class="container">
 				<h2>{{data.post.title}}</h2>
 				<ul class="breadcrumb">
-					<li class="breadcrumb-item"><a href="/">Home</a></li>
-					<li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+					<li class="breadcrumb-item"><a href="/zh-CN">首页</a></li>
+					<li class="breadcrumb-item"><a href="/zh-CN/blog">最新资讯</a></li>
 					<li class="breadcrumb-item active">{{data.post.title}}</li>
 				</ul>
 			</div>
@@ -95,9 +105,9 @@
 					<!-- Search -->
 					<div class="widget">
 						<div class="widget-search">
-							<form role="search" action="/blog" method="GET">
+							<form role="search" action="/zh-CN/blog" method="GET">
 
-									<input class="search-input" type="text" placeholder="search" id="keywords" name="keywords">
+									<input class="search-input" type="text" placeholder="搜索" id="keywords" name="keywords">
 									<button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
 
 							</form>
@@ -107,11 +117,11 @@
 
 					<!-- Category -->
 					<div class="widget">
-						<h3 class="title">Category</h3>
+						<h3 class="title">目录</h3>
 						<div class="widget-category">
-							<a href="/blog">All Categories</a>
+							<a href="/zh-CN/blog">全部分类</a>
 							{{# each data.categories }}
-							<a href="{{categoryUrl key}}">{{name}}</a>
+							<a href="{{categoryUrlChinese key}}">{{name}}</a>
 							{{/each}}
 						</div>
 					</div>

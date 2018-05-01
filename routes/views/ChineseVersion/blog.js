@@ -20,7 +20,7 @@ exports = module.exports = function (req, res) {
 	// Load all categories
 	view.on('init', function (next) {
 
-		keystone.list('PostCategory').model.find().sort('name').exec(function (err, results) {
+		keystone.list('PostCategoryChinese').model.find().sort('name').exec(function (err, results) {
 
 			if (err || !results.length) {
 				return next(err);
@@ -31,7 +31,7 @@ exports = module.exports = function (req, res) {
 			// Load the counts for each category
 			async.each(locals.data.categories, function (category, next) {
 
-				keystone.list('Post').model.count().where('categories').in([category.id]).exec(function (err, count) {
+				keystone.list('PostChinese').model.count().where('categories').in([category.id]).exec(function (err, count) {
 					category.postCount = count;
 					next(err);
 				});
@@ -46,7 +46,7 @@ exports = module.exports = function (req, res) {
 	view.on('init', function (next) {
 
 		if (req.params.category) {
-			keystone.list('PostCategory').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
+			keystone.list('PostCategoryChinese').model.findOne({ key: locals.filters.category }).exec(function (err, result) {
 				locals.data.category = result;
 				next(err);
 			});
@@ -57,9 +57,7 @@ exports = module.exports = function (req, res) {
 
 	// Load the posts
 	view.on('init', function (next) {
-		console.log(locals.filters.keywords);
-
-		var q = keystone.list('Post').paginate({
+		var q = keystone.list('PostChinese').paginate({
 			page: req.query.page || 1,
 			perPage: 10,
 			maxPages: 100,
@@ -82,5 +80,5 @@ exports = module.exports = function (req, res) {
 	});
 
 	// Render the view
-	view.render('blog');
+	view.render('Chinese-Version/blog');
 };

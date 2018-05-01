@@ -196,6 +196,10 @@ module.exports = function () {
 		return ('/blog/post/' + postSlug);
 	};
 
+	_helpers.postUrlChinese = function (postSlug, options) {
+		return ('/zh-CN/blog/post/' + postSlug);
+	};
+
 	// might be a ghost helper
 	// used for pagination urls on blog
 	_helpers.pageUrl = function (pageNumber, options) {
@@ -205,6 +209,10 @@ module.exports = function () {
 	// create the category url for a blog-category page
 	_helpers.categoryUrl = function (categorySlug, options) {
 		return ('/blog/' + categorySlug);
+	};
+
+	_helpers.categoryUrlChinese = function (categorySlug, options) {
+		return ('/zh-CN/blog/' + categorySlug);
 	};
 
 	// ### Pagination Helpers
