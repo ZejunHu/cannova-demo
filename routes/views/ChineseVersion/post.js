@@ -69,5 +69,5 @@ exports = module.exports = function (req, res) {
 	});
 
 	// Render the view
-	view.render('Chinese-Version/post');
+	view.render('Chinese-version/post');
 };
