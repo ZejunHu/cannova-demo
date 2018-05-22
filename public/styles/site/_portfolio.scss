@@ -148,12 +148,19 @@
       //font-style: italic;
       margin: 20px 0 30px;
     }
-    ul.list-inline {
-      margin-top: 0;
-      margin-bottom: 30px;
+    ul {
+      text-align: left;
+      margin-bottom: 10px;
       li {
-        p {
-          display: inline-block;
+        margin-left: 2rem;
+      }
+      .list-inline {
+        margin-top: 0;
+        margin-bottom: 30px;
+        li {
+          p {
+            display: inline-block;
+          }
         }
       }
     }

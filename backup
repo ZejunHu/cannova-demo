@@ -1,0 +1,86 @@
+<!-- Team -->
+<div id="team" class="section md-padding">
+
+  <!-- Container -->
+  <div class="container">
+
+    <!-- Row -->
+    <div class="row">
+
+      <!-- Section header -->
+      <div class="section-header text-center">
+        <h2 class="title">加星团队</h2>
+      </div>
+      <!-- /Section header -->
+
+      <!-- team -->
+      <div class="col-sm-4">
+        <div class="team">
+          <div class="team-img">
+            <img class="img-responsive" src="/images/temp/team1.jpg" alt="">
+            <div class="overlay">
+              <div class="team-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-content">
+            <h3>Robin黄</h3>
+            <span>RCIC (R521675), 加拿大总部负责人</span>
+          </div>
+        </div>
+      </div>
+      <!-- /team -->
+
+      <!-- team -->
+      <div class="col-sm-4">
+        <div class="team">
+          <div class="team-img">
+            <img class="img-responsive" src="/images/temp/team2.jpg" alt="">
+            <div class="overlay">
+              <div class="team-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-content">
+            <h3>Lyea Lv</h3>
+            <span>中国分公司负责人</span>
+          </div>
+        </div>
+      </div>
+      <!-- /team -->
+
+      <!-- team -->
+      <div class="col-sm-4">
+        <div class="team">
+          <div class="team-img">
+            <img class="img-responsive" src="/images/temp/team3.jpg" alt="">
+            <div class="overlay">
+              <div class="team-social">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="team-content">
+            <h3>Hank Wang</h3>
+            <span>中国分公司市场部负责人</span>
+          </div>
+        </div>
+      </div>
+      <!-- /team -->
+
+    </div>
+    <!-- /Row -->
+
+  </div>
+  <!-- /Container -->
+
+</div>
+<!-- /Team -->

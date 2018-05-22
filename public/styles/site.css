@@ -73,8 +73,7 @@ a:hover, a:focus {
 
 ul, ol {
   margin: 0;
-  padding: 0;
-  list-style: none; }
+  padding: 0; }
 
 /* -- section  -- */
 .section {
@@ -656,11 +655,16 @@ header {
     .portfolio-modal .modal-content p.item-intro {
       font-size: 16px;
       margin: 20px 0 30px; }
-    .portfolio-modal .modal-content ul.list-inline {
-      margin-top: 0;
-      margin-bottom: 30px; }
-      .portfolio-modal .modal-content ul.list-inline li p {
-        display: inline-block; }
+    .portfolio-modal .modal-content ul {
+      text-align: left;
+      margin-bottom: 10px; }
+      .portfolio-modal .modal-content ul li {
+        margin-left: 2rem; }
+      .portfolio-modal .modal-content ul .list-inline {
+        margin-top: 0;
+        margin-bottom: 30px; }
+        .portfolio-modal .modal-content ul .list-inline li p {
+          display: inline-block; }
     .portfolio-modal .modal-content img {
       margin-bottom: 30px; }
     .portfolio-modal .modal-content button {
