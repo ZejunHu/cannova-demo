@@ -113,8 +113,8 @@ Assessment.schema.methods.sendNotificationEmail = function (callback) {
 			templateName: 'assessment-notification',
 			transport: 'mailgun',
 		}).send({
-			//to: "success@can-nova.com",
-			to: "wbsxbysharp@gmail.com",
+			to: "success@can-nova.com",
+			// to: "wbsxbysharp@gmail.com",
 			from: {
 				name: 'CanNova',
 				email: 'noreply@cannova.com',
