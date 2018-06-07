@@ -1,0 +1,171 @@
+<!-- Header -->
+<header>
+
+	<!-- Nav -->
+	<nav id="nav" class="navbar">
+		<div class="container">
+
+			<div class="navbar-header">
+				<!-- Logo -->
+				<div class="navbar-brand">
+					<a href="/">
+						<img class="logo" src="/images/logo-alt.png" alt="logo">
+					</a>
+				</div>
+				<!-- /Logo -->
+
+				<!-- Collapse nav button -->
+				<div class="nav-collapse">
+					<span></span>
+				</div>
+				<!-- /Collapse nav button -->
+			</div>
+
+			<!--  Main navigation  -->
+			<ul class="main-nav nav navbar-nav navbar-right">
+				<li><a href="/#home">Home</a></li>
+				<li><a href="/#about">About</a></li>
+				<li><a href="/#portfolio">Categories</a></li>
+				<li><a href="/#service">Services</a></li>
+				<li><a href="/#team">Team</a></li>
+				<li><a href="/blog">News</a>
+					<!-- <ul class="dropdown">
+						<li><a href="#">blog post</a></li>
+					</ul> -->
+				</li>
+				<li><a href="/#contact">Contact</a></li>
+				<li><a href="/assessment">Assessment</a></li>
+				<li><a href="/zh-CN">中文</a></li>
+			</ul>
+			<!-- /Main navigation -->
+
+		</div>
+	</nav>
+	<!-- /Nav -->
+
+	<!-- header wrapper -->
+	<div class="header-wrapper sm-padding bg-grey">
+		<div class="container">
+			<h2>Work with Can-Nova</h2>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/">Home</a></li>
+				<li class="breadcrumb-item"><a href="/team">Work with Can-Nova</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- /header wrapper -->
+
+</header>
+<!-- /Header -->
+
+
+<div class="container sm-padding">
+	<div class="team-block">
+		<div class="">
+			<h4>Cooperative Partner</h4>
+		</div>
+		<div class="">
+			<p>If you are an immigration lawyer, notary, accountants, translator, travel agency, representative of education institution or any other professionals who are in related areas, we welcome you to contact us. We look forward to become a cooperative partner with you to provide comprehensive service experience to our clients. Please email us your business information and we will get back to you within 24 hours.</p>
+		</div>
+	</div>
+
+	<div class="team-block">
+		<div class="">
+			<h4>Marketing Agent</h4>
+		</div>
+		<div class="">
+			<p>Can-Nova is always looking for marketing agent in different cities of both Canada and China. If you have certain customer resources and you are enthusiasm in marketing, we encourage you to contact and discuss with us how you can become a marketing agent of Can-Nova.</p>
+		</div>
+	</div>
+
+	<div class="team-block">
+		<div class="">
+			<h4>Internship Opportunity for Students</h4>
+		</div>
+		<div class="">
+			<p>Can-Nova provides internship opportunity to college and university students. We require that you need to be allowed to work while study. If you are planning to become an immigration lawyer or consultant, or if you are familiar with the immigration programs and procedures, or if you are just looking for a challenging internship, Can-Nova will be your good choice. Please email us your CV and we will contact you within 24 hours.</p>
+		</div>
+	</div>
+</div>
+
+<!-- Contact -->
+<div id="contact" class="section sm-padding">
+
+	<!-- Container -->
+	<div class="container">
+
+		<!-- Row -->
+		<div class="row">
+
+			<!-- Section-header -->
+			<div class="section-header text-center">
+				<h2 class="title">Contact Us</h2>
+			</div>
+			<!-- /Section-header -->
+
+			<!-- contact -->
+			<div class="col-sm-6">
+				<div class="contact">
+					<i class="fa fa-phone"></i>
+					<h3>Phone</h3>
+					<p>Vancouver: +1-778-834-0716<br />
+					Toronto: +1-289-795-2817</p>
+				</div>
+			</div>
+			<!-- /contact -->
+
+			<!-- contact -->
+			<div class="col-sm-6">
+				<div class="contact">
+					<i class="fa fa-envelope"></i>
+					<h3>Email</h3>
+					<p>success@can-nova.com</p>
+				</div>
+			</div>
+			<!-- /contact -->
+
+			<!-- contact -->
+			<!-- <div class="col-sm-4">
+				<div class="contact">
+					<i class="fa fa-map-marker"></i>
+					<h3>Address</h3>
+					<p>#142, 700 Third Line, Oakville, Ontario, L6L 4B1</p>
+				</div>
+			</div> -->
+			<!-- /contact -->
+
+			<!-- contact form -->
+			<div class="col-md-8 col-md-offset-2" style="padding: 0;">
+				{{#if enquirySubmitted}}
+				<h3 class="text-center">Thanks for getting in touch.</h3>
+				{{else}}
+				<form class="contact-form" method="post">
+					<input type="hidden" name="action" value="contact">
+					<div class="form-group first-line {{#if validationErrors.name}}has-error{{/if}}">
+						<input type="text" name="name.full"  class="input" placeholder="Name" value="{{formData.[name.full]}}">
+					</div>
+					<div class="form-group first-line first-line-right {{#if validationErrors.email}}has-error{{/if}}">
+						<input type="email" name="email" class="input" placeholder="Email" value="{{formData.email}}">
+					</div>
+					<div class="form-group">
+						<input type="text" name="subject" placeholder="Subject" class="input" value="{{formData.subject}}">
+					</div>
+					<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
+						<textarea name="message" placeholder="Message" class="input">{{formData.message}}</textarea>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="main-btn">Send</button>
+					</div>
+				</form>
+				{{/if}}
+			</div>
+			<!-- /contact form -->
+
+		</div>
+		<!-- /Row -->
+
+	</div>
+	<!-- /Container -->
+
+</div>
+<!-- /Contact -->

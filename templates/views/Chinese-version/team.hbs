@@ -1,0 +1,171 @@
+<!-- Header -->
+<header>
+
+	<!-- Nav -->
+	<nav id="nav" class="navbar">
+		<div class="container">
+
+			<div class="navbar-header">
+				<!-- Logo -->
+				<div class="navbar-brand">
+					<a href="/">
+						<img class="logo" src="/images/logo-alt.png" alt="logo">
+					</a>
+				</div>
+				<!-- /Logo -->
+
+				<!-- Collapse nav button -->
+				<div class="nav-collapse">
+					<span></span>
+				</div>
+				<!-- /Collapse nav button -->
+			</div>
+
+			<!--  Main navigation  -->
+			<ul class="main-nav nav navbar-nav navbar-right">
+				<li><a href="/zh-CN/#home">首页</a></li>
+				<li><a href="/zh-CN/#about">公司简介</a></li>
+				<li><a href="/zh-CN/#portfolio">移民类别</a></li>
+				<li><a href="/zh-CN/#service">服务项目</a></li>
+				<li><a href="/zh-CN/#team">加星团队</a></li>
+				<li><a href="/zh-CN/blog">最新资讯</a>
+					<!-- <ul class="dropdown">
+						<li><a href="#">blog post</a></li>
+					</ul> -->
+				</li>
+				<li><a href="/zh-CN/#contact">联系我们</a></li>
+				<li><a href="/assessment">在线评估</a></li>
+				<li><a href="/">English</a></li>
+			</ul>
+			<!-- /Main navigation -->
+
+		</div>
+	</nav>
+	<!-- /Nav -->
+
+	<!-- header wrapper -->
+	<div class="header-wrapper sm-padding bg-grey">
+		<div class="container">
+			<h2>合作&amp;招聘</h2>
+			<ul class="breadcrumb">
+				<li class="breadcrumb-item"><a href="/zh-CN">首页</a></li>
+				<li class="breadcrumb-item"><a href="/zh-CN/team">合作&amp;招聘</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- /header wrapper -->
+
+</header>
+<!-- /Header -->
+
+
+<div class="container sm-padding">
+	<div class="team-block">
+		<div class="">
+			<h4>合作伙伴</h4>
+		</div>
+		<div class="">
+			<p>如果您是移民律师，公证员，会计师，旅游代理，教育机构负责人，或其他有关专业人员和机构，我们欢迎您联系我们。我们期待和您成为合作伙伴，为客户提供全方位的综合服务体验。请将您公司的信息电邮给我们，我们会在24小时内回复您。</p>
+		</div>
+	</div>
+
+	<div class="team-block">
+		<div class="">
+			<h4>市场代理</h4>
+		</div>
+		<div class="">
+			<p>加星长期招募加拿大和中国各大城市的市场代理。如果您有一定的客户资源，并且您对市场开发有热情，我们鼓励您联系我们，共同商讨如何成为加星的市场代理。</p>
+		</div>
+	</div>
+
+	<div class="team-block">
+		<div class="">
+			<h4>实习机会</h4>
+		</div>
+		<div class="">
+			<p>加星为大专院校的学生提供实习机会。要求实习生具有在加拿大学习时兼职工作的资格。如果您想要成为移民律师或顾问，或者如果您对移民项目和程序比较熟悉，或者您仅仅是想要找有挑战的实习机会，加星将是您特别好的选择。请将您的CV用电邮发送给我们。我们会在24小时内联系您。</p>
+		</div>
+	</div>
+</div>
+
+<!-- Contact -->
+<div id="contact" class="section md-padding">
+
+	<!-- Container -->
+	<div class="container">
+
+		<!-- Row -->
+		<div class="row">
+
+			<!-- Section-header -->
+			<div class="section-header text-center">
+				<h2 class="title">联系我们</h2>
+			</div>
+			<!-- /Section-header -->
+
+			<!-- contact -->
+			<div class="col-sm-6">
+				<div class="contact">
+					<i class="fa fa-phone"></i>
+					<h3>电话</h3>
+					<p>温哥华：+1-778-834-0716<br />
+					多伦多：+1-289-795-2817</p>
+				</div>
+			</div>
+			<!-- /contact -->
+
+			<!-- contact -->
+			<div class="col-sm-6">
+				<div class="contact">
+					<i class="fa fa-envelope"></i>
+					<h3>邮箱</h3>
+					<p>success@can-nova.com</p>
+				</div>
+			</div>
+			<!-- /contact -->
+
+			<!-- contact -->
+			<!-- <div class="col-sm-4">
+				<div class="contact">
+					<i class="fa fa-map-marker"></i>
+					<h3>地址</h3>
+					<p>#142, 700 Third Line, Oakville, Ontario, L6L 4B1</p>
+				</div>
+			</div> -->
+			<!-- /contact -->
+
+			<!-- contact form -->
+			<div class="col-md-8 col-md-offset-2" style="padding: 0;">
+				{{#if enquirySubmitted}}
+				<h3 class="text-center">谢谢您的支持，我们会尽快回复！</h3>
+				{{else}}
+				<form class="contact-form" method="post">
+					<input type="hidden" name="action" value="contact">
+					<div class="form-group first-line {{#if validationErrors.name}}has-error{{/if}}">
+						<input type="text" name="name.full"  class="input" placeholder="姓名" value="{{formData.[name.full]}}">
+					</div>
+					<div class="form-group first-line first-line-right {{#if validationErrors.email}}has-error{{/if}}">
+						<input type="email" name="email" class="input" placeholder="电子邮件" value="{{formData.email}}">
+					</div>
+					<div class="form-group">
+						<input type="text" name="subject" placeholder="主题" class="input" value="{{formData.subject}}">
+					</div>
+					<div class="form-group {{#if validationErrors.message}}has-error{{/if}} ">
+						<textarea name="message" placeholder="留言" class="input">{{formData.message}}</textarea>
+					</div>
+					<div class="form-actions">
+						<button type="submit" class="main-btn">提交</button>
+					</div>
+				</form>
+				{{/if}}
+			</div>
+			<!-- /contact form -->
+
+		</div>
+		<!-- /Row -->
+
+	</div>
+	<!-- /Container -->
+
+</div>
+<!-- /Contact -->
