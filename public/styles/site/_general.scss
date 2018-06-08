@@ -119,7 +119,9 @@ ul, ol {
     z-index: -1;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
+    @media (min-width: 992px) {
+      background-attachment: fixed;
+    }
 }
 
 .bg-img .overlay {

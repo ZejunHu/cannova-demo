@@ -105,8 +105,10 @@ ul, ol {
   bottom: 0;
   z-index: -1;
   background-position: center;
-  background-size: cover;
-  background-attachment: fixed; }
+  background-size: cover; }
+  @media (min-width: 992px) {
+    .bg-img {
+      background-attachment: fixed; } }
 
 .bg-img .overlay {
   position: absolute;
