@@ -1,3 +1,8 @@
+<style>
+p, h1, h2, h3, h4, h5, h6, a {
+	font-family: 'Noto Sans SC', sans-serif;
+}
+</style>
 <!-- Header -->
 <header>
 
@@ -65,7 +70,7 @@
 			<h4>合作伙伴</h4>
 		</div>
 		<div class="">
-			<p>如果您是移民律师，公证员，会计师，旅游代理，教育机构负责人，或其他有关专业人员和机构，我们欢迎您联系我们。我们期待和您成为合作伙伴，为客户提供全方位的综合服务体验。请将您公司的信息电邮给我们，我们会在24小时内回复您。</p>
+			<p>如果您是移民律师，注册移民顾问，公证员，会计师，旅游代理，教育机构负责人，或其他有关专业人员和机构，我们欢迎您联系我们。我们期待和您成为合作伙伴，为客户提供全方位的综合服务体验。请将您公司的信息电邮给我们，我们会在24小时内回复您。</p>
 		</div>
 	</div>
 
@@ -137,8 +142,34 @@
 			<!-- contact form -->
 			<div class="col-md-8 col-md-offset-2" style="padding: 0;">
 				{{#if enquirySubmitted}}
-				<h3 class="text-center">谢谢您的支持，我们会尽快回复！</h3>
-				{{else}}
+				<div class="portfolio-modal modal fade in" id="contact-form-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: block;">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="close-modal contact-form-close" data-dismiss="modal">
+								<div class="lr">
+									<div class="rl"></div>
+								</div>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+										<div class="modal-body">
+											<!-- Project Details Go Here -->
+											<h2 class="text-uppercase text-center">Thank you! We will reply in 24 hours!</h2>
+											<h2 class="text-uppercase text-center">谢谢！我们会在24小时内回复您！</h2>
+											<div class="text-center">
+												<button class="btn main-btn contact-form-close" data-dismiss="modal" type="button">
+													<i class="fa fa-times"></i>
+													Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{{/if}}
 				<form class="contact-form" method="post">
 					<input type="hidden" name="action" value="contact">
 					<div class="form-group first-line {{#if validationErrors.name}}has-error{{/if}}">
@@ -157,7 +188,7 @@
 						<button type="submit" class="main-btn">提交</button>
 					</div>
 				</form>
-				{{/if}}
+				
 			</div>
 			<!-- /contact form -->
 

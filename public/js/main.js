@@ -90,4 +90,13 @@
     }
   });
 
+  $('.contact-form-close').click(function() {
+    $('#contact-form-modal').removeClass('in');
+    $('#contact-form-modal').css('display', 'none');
+  });
+  $('.assessment-form-close').click(function() {
+    $('#assessment-form-modal').removeClass('in');
+    $('#assessment-form-modal').css('display', 'none');
+  });
+
 })(jQuery);

@@ -982,6 +982,11 @@ header {
   padding-top: 5rem; }
   .team-section .team-heading {
     color: white; }
+  .team-section .team-sub-heading {
+    text-align: right;
+    padding-right: 2rem;
+    margin: 0;
+    color: #B3B3B4; }
   .team-section .team-infomation {
     padding-right: 2rem; }
   .team-section .team-button {
@@ -1380,10 +1385,6 @@ header {
     margin: auto; }
   .blog-comments .media .media {
     margin: 0px -15px; } }
-
-@font-face {
-  font-family: "Yahei";
-  src: url("/fonts/Microsoft Yahei.ttf"); }
 
 /*------------------------------------*\
 	Owl theme

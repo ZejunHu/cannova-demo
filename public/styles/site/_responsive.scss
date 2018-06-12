@@ -77,7 +77,11 @@
   }
 }
 
-@font-face {
-  font-family: "Yahei";
-  src:url("/fonts/Microsoft Yahei.ttf");
+@mixin yahei() {
+  font-family: "HeiS ASC Simplified Chinese";
 }
+
+// @font-face {
+//   font-family: "Yahei";
+//   src:url("/fonts/Microsoft Yahei.ttf");
+// }

@@ -58,7 +58,7 @@
 					<!-- home content -->
 					<div class="col-md-10 col-md-offset-1">
 						<div class="home-content">
-							<h1 class="white-text">Can-Nova Immigration Inc</h1>
+							<h1 class="white-text">Can-Nova Immigration Inc.</h1>
 							<h3 class="white-text">Canada Immigration Professional</h3>
 							<p class="white-text">Hello! Canada</p>
 							<p class="white-text">Bonjour! Canada</p>
@@ -433,16 +433,16 @@
 											<h4>WHO MAY BE ELIGIBLE TO STUDY IN CANADA?</h4>
 											<p><strong>People who</strong></p>
 											<ul>
-												<li>Have valid offer from a Designated Learning Institutions (elementary, secondary, post secondary, or graduate schools) and have received valid study permit;</li>
-												<li>Attend any school for short-term study (less than 6 months);</li>
-												<li>Are family or staff of foreign representatives;</li>
-												<li>Are members of foreign armed forces and their family members;</li>
-												<li>Are registered Indians in Canada;</li>
+												<li>Have valid offer from a Designated Learning Institutions (elementary, secondary, post secondary, or graduate schools) and have received valid study permit; or</li>
+												<li>Attend any school for short-term study (less than 6 months); or</li>
+												<li>Are family or staff of foreign representatives; or</li>
+												<li>Are members of foreign armed forces and their family members; or</li>
+												<li>Are registered Indians in Canada; or</li>
 												<li>
 													Are minor Children in Canada  if
 													<ul>
-														<li>the are in kindergarten; </li>
-														<li>they are refugees or refugee claimants;</li>
+														<li>the are in kindergarten; or</li>
+														<li>they are refugees or refugee claimants; or</li>
 														<li>they have parents who are refugees or refugee claimants ; or</li>
 														<li>their parents hold valid  study or  work permit and are in Canada.</li>
 													</ul>
@@ -480,9 +480,9 @@
 												<h4>WHO MAY BE ELIGIBLE TO VISIT CANADA?</h4>
 												<p><strong>People who</strong></p>
 												<ul>
-													<li>Want to visit children or grandchildren for more than six months;</li>
-													<li>Want to come to Canada as a tourist, visit family or friends, or study (up to six months);</li>
-													<li>Plan to attend a business meeting, conference, trade show;</li>
+													<li>Want to visit children or grandchildren for more than six months; or</li>
+													<li>Want to come to Canada as a tourist, visit family or friends, or study (up to six months); or</li>
+													<li>Plan to attend a business meeting, conference, trade show; or</li>
 													<li>Will transit through Canada.</li>
 												</ul>
 												<p>may be eligible to visit Canada.</p>
@@ -517,11 +517,11 @@
 													<h4>WHO MAY BE ELIGIBLE TO CLAIM REFUGEES OR ASYLUM?</h4>
 													<p><strong>People who</strong></p>
 													<ul>
-														<li>Are in Canada and fear persecution or would be in danger if they had to leave;</li>
-														<li>Are convention refugee abroad class;</li>
+														<li>Are in Canada and fear persecution or would be in danger if they had to leave; or</li>
+														<li>Are convention refugee abroad class; or</li>
 														<li>Are country of asylum class.</li>
 													</ul>
-													<p>Are country of asylum class.</p>
+													<p>may be eligible to claim refugees or asylum.</p>
 													<h4>WHO MAY BE ELIGIBLE TO SPONSOR REFUGEES?</h4>
 													<ul>
 														<li>Sponsorship Agreement Holders</li>
@@ -895,6 +895,7 @@
 				<div class="col-md-7 col-lg-8">
 					<div class="section-header">
 						<h2 class="team-heading">Message from the Director</h2>
+						<h4 class="team-sub-heading">Yu Huang, RCIC (R521675)</h4>
 					</div>
 					<div class="team-infomation">
 						<p>As the founder of Can-Nova, it is my pleasure to welcome you, our dearest clients, to beautiful Canada. Whether you are a new or future landed immigrant, worker, student, visitor, refugee or protected person, we invite you to explore Canada and take Canada as your new home. One of our primary missions is to find resources and programs that are suitable to our clients. We work with lawyers, accountants, notary organizations, translators, designated service providers, education institutions and many other professionals to create extraordinary comprehensive service experiences. Thank you for your continuing support and acknowledge. We wish you have a wonderful life in Canada and we look forward to hearing from!</p>
@@ -1019,8 +1020,34 @@
 				<!-- contact form -->
 				<div class="col-md-8 col-md-offset-2" style="padding: 0;">
 					{{#if enquirySubmitted}}
-					<h3 class="text-center">Thanks for getting in touch.</h3>
-					{{else}}
+					<div class="portfolio-modal modal fade in" id="contact-form-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: block;">
+			      <div class="modal-dialog">
+			        <div class="modal-content">
+			          <div class="close-modal contact-form-close" data-dismiss="modal">
+			            <div class="lr">
+			              <div class="rl"></div>
+			            </div>
+			          </div>
+			          <div class="container">
+			            <div class="row">
+			              <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+			                <div class="modal-body">
+			                  <!-- Project Details Go Here -->
+												<h2 class="text-uppercase text-center">Thank you! We will reply in 24 hours!</h2>
+			                  <h2 class="text-uppercase text-center">谢谢！我们会在24小时内回复您！</h2>
+												<div class="text-center">
+													<button class="btn main-btn contact-form-close" data-dismiss="modal" type="button">
+				                    <i class="fa fa-times"></i>
+				                    Close</button>
+												</div>
+			                </div>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+					{{/if}}
 					<form class="contact-form" method="post">
 						<input type="hidden" name="action" value="contact">
 						<div class="form-group first-line {{#if validationErrors.name}}has-error{{/if}}">
@@ -1039,7 +1066,7 @@
 							<button type="submit" class="main-btn">Send</button>
 						</div>
 					</form>
-					{{/if}}
+					
 				</div>
 				<!-- /contact form -->
 

@@ -65,7 +65,7 @@
 			<h4>Cooperative Partner</h4>
 		</div>
 		<div class="">
-			<p>If you are an immigration lawyer, notary, accountants, translator, travel agency, representative of education institution or any other professionals who are in related areas, we welcome you to contact us. We look forward to become a cooperative partner with you to provide comprehensive service experience to our clients. Please email us your business information and we will get back to you within 24 hours.</p>
+			<p>If you are immigration lawyer, Regulated Canadian Immigration Consultant (RCIC), notary, accountant, translator, travel agency, representative of education institution or any other professionals who are in related areas, we welcome you to contact us. We look forward to become a cooperative partner with you to provide comprehensive service experience to our clients. Please email us your business information and we will get back to you within 24 hours.</p>
 		</div>
 	</div>
 
@@ -74,7 +74,7 @@
 			<h4>Marketing Agent</h4>
 		</div>
 		<div class="">
-			<p>Can-Nova is always looking for marketing agent in different cities of both Canada and China. If you have certain customer resources and you are enthusiasm in marketing, we encourage you to contact and discuss with us how you can become a marketing agent of Can-Nova.</p>
+			<p>Can-Nova is always looking for marketing agents in different cities of both Canada and China. If you have certain customer resources and you are enthusiasm in marketing, we encourage you to contact and discuss with us how you can become a marketing agent of Can-Nova.</p>
 		</div>
 	</div>
 
@@ -137,8 +137,34 @@
 			<!-- contact form -->
 			<div class="col-md-8 col-md-offset-2" style="padding: 0;">
 				{{#if enquirySubmitted}}
-				<h3 class="text-center">Thanks for getting in touch.</h3>
-				{{else}}
+				<div class="portfolio-modal modal fade in" id="contact-form-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: block;">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="close-modal contact-form-close" data-dismiss="modal">
+								<div class="lr">
+									<div class="rl"></div>
+								</div>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+										<div class="modal-body">
+											<!-- Project Details Go Here -->
+											<h2 class="text-uppercase text-center">Thank you! We will reply in 24 hours!</h2>
+											<h2 class="text-uppercase text-center">谢谢！我们会在24小时内回复您！</h2>
+											<div class="text-center">
+												<button class="btn main-btn contact-form-close" data-dismiss="modal" type="button">
+													<i class="fa fa-times"></i>
+													Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{{/if}}
 				<form class="contact-form" method="post">
 					<input type="hidden" name="action" value="contact">
 					<div class="form-group first-line {{#if validationErrors.name}}has-error{{/if}}">
@@ -157,7 +183,7 @@
 						<button type="submit" class="main-btn">Send</button>
 					</div>
 				</form>
-				{{/if}}
+				
 			</div>
 			<!-- /contact form -->
 
