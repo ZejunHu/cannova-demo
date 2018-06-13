@@ -11,6 +11,7 @@ var PostCategory = new keystone.List('PostCategoryChinese', {
 
 PostCategory.add({
 	name: { type: String, required: true },
+	priority: { type: Number, default: 9999 },
 });
 
 PostCategory.relationship({ ref: 'PostChinese', path: 'postsChinese', refPath: 'categories' });
