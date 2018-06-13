@@ -645,6 +645,14 @@ header {
   .portfolio-modal .modal-dialog {
     margin: 1rem;
     width: 98vw; }
+  .portfolio-modal .modal-dialog-sm {
+    margin: auto;
+    margin-top: 20vh;
+    max-width: 500px; }
+  .portfolio-modal .modal-dialog-md {
+    margin: auto;
+    margin-top: 20vh;
+    max-width: 600px; }
   .portfolio-modal .modal-content {
     padding: 100px 0;
     text-align: center; }
@@ -668,9 +676,13 @@ header {
         .portfolio-modal .modal-content ul .list-inline li p {
           display: inline-block; }
     .portfolio-modal .modal-content img {
-      margin-bottom: 30px; }
+      margin: auto;
+      margin-bottom: 30px;
+      max-width: 100%; }
     .portfolio-modal .modal-content button {
       cursor: pointer; }
+  .portfolio-modal .modal-content-sm {
+    padding-bottom: 60px; }
   .portfolio-modal .close-modal {
     position: absolute;
     top: 25px;
@@ -1558,6 +1570,9 @@ header {
 
 .mt-5 {
   margin-top: 5rem; }
+
+.mb-5 {
+  margin-bottom: 5rem; }
 
 .mx-auto {
   margin-left: auto !important;

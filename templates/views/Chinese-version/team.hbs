@@ -142,33 +142,32 @@ p, h1, h2, h3, h4, h5, h6, a {
 			<!-- contact form -->
 			<div class="col-md-8 col-md-offset-2" style="padding: 0;">
 				{{#if enquirySubmitted}}
+
 				<div class="portfolio-modal modal fade in" id="contact-form-modal" tabindex="-1" role="dialog" aria-hidden="true" style="display: block;">
-					<div class="modal-dialog">
-						<div class="modal-content">
+					<div class="modal-dialog-md">
+						<div class="modal-content modal-content-sm">
 							<div class="close-modal contact-form-close" data-dismiss="modal">
 								<div class="lr">
 									<div class="rl"></div>
 								</div>
 							</div>
-							<div class="container">
-								<div class="row">
-									<div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
-										<div class="modal-body">
-											<!-- Project Details Go Here -->
-											<h2 class="text-uppercase text-center">Thank you! We will reply in 24 hours!</h2>
-											<h2 class="text-uppercase text-center">谢谢！我们会在24小时内回复您！</h2>
-											<div class="text-center">
-												<button class="btn main-btn contact-form-close" data-dismiss="modal" type="button">
-													<i class="fa fa-times"></i>
-													Close</button>
-											</div>
-										</div>
-									</div>
+
+							<div class="modal-body">
+								<!-- Project Details Go Here -->
+								<h4 class="text-uppercase text-center">Thank you! We will reply in 24 hours!</h2>
+								<h4 class="text-uppercase text-center mb-5">谢谢！我们会在24小时内回复您！</h2>
+								<div class="text-center">
+									<button class="btn main-btn contact-form-close" data-dismiss="modal" type="button">
+										<i class="fa fa-times"></i>
+										Close</button>
 								</div>
 							</div>
+
 						</div>
 					</div>
 				</div>
+
+
 				{{/if}}
 				<form class="contact-form" method="post">
 					<input type="hidden" name="action" value="contact">
@@ -188,7 +187,7 @@ p, h1, h2, h3, h4, h5, h6, a {
 						<button type="submit" class="main-btn">提交</button>
 					</div>
 				</form>
-				
+
 			</div>
 			<!-- /contact form -->
 
